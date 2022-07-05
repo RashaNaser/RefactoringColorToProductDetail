@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Product Details</string>
+    <string name="back_arrow">Back arrow</string>
+    <string name="activity_name">Details</string>
+    <string name="product_image">Product Image</string>
+    <string name="cart_icon">Cart Icon</string>
+    <string name="best_sales">Best Sales</string>
+    <string name="size_options">Size Options</string>
+    <string name="product_name">Caramel \nFrappuccino</string>
+    <string name="first_size">ُTall</string>
+    <string name="second_size">Grande</string>
+    <string name="third_size">Venti</string>
+    <string name="custom">Custom</string>
+    <string name="add_to_order">Add to Order</string>
+</resources>

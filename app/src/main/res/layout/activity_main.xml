@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/starboxcoffebackground"
+    android:orientation="vertical"
+    android:padding="@dimen/default_margin"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/back_arrow"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activityNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/default_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/cartIv"
+            app:layout_constraintStart_toEndOf="@+id/backArrow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cartIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cart_icon"
+            android:src="@drawable/ic_shopping_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/gold" />
+
+        <TextView
+            android:id="@+id/text_no"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/product_size_selected_shape"
+            android:gravity="center"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/activityNameTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityNameTv">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="bottom|center"
+                android:src="@drawable/product_size_selected_shape" />
+
+            <ImageView
+                android:id="@+id/productIv"
+                android:layout_width="250dp"
+                android:layout_height="@dimen/product_image_height"
+                android:contentDescription="@string/product_image"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:src="@drawable/starbucks_coffee"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/productNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/big_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        <TextView
+            android:id="@+id/productPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30.00$"
+            android:textColor="@color/red"
+            android:textSize="@dimen/big_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/productNameTv" />
+
+        <TextView
+            android:id="@+id/productStateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/best_sales"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/default_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productPriceTv" />
+
+        <TextView
+            android:id="@+id/sizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/size_options"
+            android:textColor="#D2D1D4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productNameTv" />
+
+        <ImageButton
+            android:id="@+id/firstSizeIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/product_size_shape"
+            android:contentDescription="@string/first_size"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_coffee_cup"
+            app:layout_constraintEnd_toStartOf="@+id/secondSizeIv"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@+id/sizeTv"
+            app:layout_constraintTop_toBottomOf="@+id/sizeTv"
+            app:tint="@color/red" />
+
+        <ImageButton
+            android:id="@+id/secondSizeIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/product_size_shape"
+            android:contentDescription="@string/second_size"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_coffee_cup"
+            app:layout_constraintEnd_toStartOf="@+id/thirdSizeIv"
+            app:layout_constraintStart_toEndOf="@+id/firstSizeIv"
+            app:layout_constraintTop_toTopOf="@+id/firstSizeIv"
+            app:tint="@color/red" />
+
+        <ImageButton
+            android:id="@+id/thirdSizeIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/product_size_selected_shape"
+            android:contentDescription="@string/third_size"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_coffee_cup"
+            app:layout_constraintEnd_toStartOf="@+id/forthSizeIv"
+            app:layout_constraintStart_toEndOf="@+id/secondSizeIv"
+            app:layout_constraintTop_toTopOf="@+id/secondSizeIv"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/forthSizeIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/product_size_shape"
+            android:contentDescription="@string/custom"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_coffee_cup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/thirdSizeIv"
+            app:layout_constraintTop_toTopOf="@+id/thirdSizeIv"
+            app:tint="@color/red" />
+
+        <TextView
+            android:id="@+id/firstSizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/first_size"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/firstSizeIv"
+            app:layout_constraintStart_toStartOf="@+id/firstSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/firstSizeIv" />
+
+        <TextView
+            android:id="@+id/firstDetailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="--12 Oz"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/firstSizeIv"
+            app:layout_constraintStart_toStartOf="@+id/firstSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/firstSizeTv" />
+
+        <TextView
+            android:id="@+id/secondSizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/second_size"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondSizeIv"
+            app:layout_constraintStart_toStartOf="@+id/secondSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/secondSizeIv" />
+
+        <TextView
+            android:id="@+id/secondDetailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="--16 Oz"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/secondSizeIv"
+            app:layout_constraintStart_toStartOf="@+id/secondSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/secondSizeTv" />
+
+        <TextView
+            android:id="@+id/thirdSizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/third_size"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/thirdSizeIv"
+            app:layout_constraintStart_toStartOf="@+id/thirdSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/thirdSizeIv" />
+
+        <TextView
+            android:id="@+id/thirdDetailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="--24 Oz"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/thirdSizeIv"
+            app:layout_constraintStart_toStartOf="@+id/thirdSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/thirdSizeTv" />
+
+        <TextView
+            android:id="@+id/forthSizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/custom"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/forthSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/forthSizeIv" />
+
+        <TextView
+            android:id="@+id/forthDetailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="--F1 Oz"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/forthSizeIv"
+            app:layout_constraintTop_toBottomOf="@+id/forthSizeTv" />
+
+        <TextView
+            android:id="@+id/decreaseCountTv"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/counter_shape"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/countTv"
+            app:layout_constraintStart_toStartOf="@+id/firstSizeIv"
+            app:layout_constraintTop_toTopOf="@+id/button" />
+
+        <TextView
+            android:id="@+id/countTv"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="12dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/decreaseCountTv"
+            app:layout_constraintStart_toEndOf="@id/decreaseCountTv"
+            app:layout_constraintTop_toTopOf="@+id/decreaseCountTv" />
+
+        <TextView
+            android:id="@+id/increaseCountTv"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/counter_shape"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/countTv"
+            app:layout_constraintTop_toTopOf="@+id/decreaseCountTv" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/red"
+            android:padding="16dp"
+            android:text="@string/add_to_order"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/increaseCountTv"
+            app:layout_constraintTop_toBottomOf="@+id/thirdDetailTv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
